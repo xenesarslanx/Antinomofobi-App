@@ -1,16 +1,15 @@
-import 'package:antinomofobi/ilkSayfa.dart';
+import 'package:antinomofobi/app_s%C3%BCreleri.dart';
 import 'package:flutter/material.dart';
-import 'package:android_alarm_manager/android_alarm_manager.dart';
-void main() async{
+void main() {
   runApp(MyApp());
-  await AndroidAlarmManager.initialize();
 }
+
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-           
+         
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

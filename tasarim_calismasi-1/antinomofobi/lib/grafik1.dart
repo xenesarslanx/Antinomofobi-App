@@ -1,8 +1,9 @@
-import 'package:antinomofobi/grafik.dart';
+/*import 'package:antinomofobi/grafik.dart';
 import 'package:antinomofobi/ilkSayfa.dart';
-import 'package:app_usage/app_usage.dart';
+
+
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
+//import 'package:syncfusion_flutter_charts/charts.dart';
 
 class grafik1 extends StatefulWidget {
   @override
@@ -17,9 +18,7 @@ class grafik1State extends State<grafik1> {
     super.initState();
   }
 
-  var infoss = List.empty();
-  List<AppUsageInfo> infos = [];
-  
+
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +28,17 @@ class grafik1State extends State<grafik1> {
         series: <ChartSeries>[
           BarSeries<GDPData, String>(
             dataSource: _chartData,
-            xValueMapper: (GDPData gdp, _) => gdp.continent,
             yValueMapper: (GDPData gdp, _) => gdp.gdp,
+            xValueMapper: (GDPData gdp, _) => gdp.continent,
           )
         ],
-        primaryXAxis: CategoryAxis(),
-      )),
+        primaryXAxis: CategoryAxis(  
+         
+        ),
+       
+
+      )
+      ),
     );
   }
 
@@ -43,16 +47,14 @@ class grafik1State extends State<grafik1> {
     ilksayfa.getUsageStats();
    // var ilkeleman = ilk.dizi();
   
-    final List<GDPData> chartData = [
-      GDPData(deger.appIsmi,infos[0].usage.inMinutes.toInt())
-      // GDPData('afrıca', 100),
-    ];
-    return chartData;
+   
+    
   }
-}
+}*/
 
-class GDPData {
+/*class GDPData {
   GDPData(this.continent, this.gdp);
   final String continent;
   final int gdp;
 }
+*/
