@@ -1,5 +1,5 @@
-import 'dart:convert';
-
+import 'package:antinomofobi/bilgi_page.dart';
+import 'package:antinomofobi/grafikler/grafik.dart';
 import 'package:antinomofobi/grafikler/grafik_data.dart';
 import 'package:app_usage/app_usage.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
@@ -11,10 +11,10 @@ class pieChart extends StatefulWidget {
   const pieChart({Key key, this.information});
 
   @override
-  _pieChartState createState() => _pieChartState();
+  pieChartState createState() => pieChartState();
 }
 
-class _pieChartState extends State<pieChart> {
+class pieChartState extends State<pieChart> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,7 +22,15 @@ class _pieChartState extends State<pieChart> {
         home: Scaffold(
             appBar: AppBar(
               title: Text('Grafik'),
-              actions: [],
+             actions: [
+               IconButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => bilgi()),
+                ),
+                icon: new Icon(Icons.graphic_eq_rounded),
+              ),
+        ],
             ),
             body: Column(
               children: <Widget>[
@@ -39,9 +47,10 @@ class _pieChartState extends State<pieChart> {
                           outsideJustification:
                           charts.OutsideJustification.startDrawArea,
                           horizontalFirst: false,
-                          desiredMaxRows: 8,
+                          desiredMaxRows: 10,
+                          desiredMaxColumns: 2,
                           cellPadding: EdgeInsets.only(
-                          right: 5.0, left: 5, bottom: 5.0, top: 5.0),
+                          right: 5.0, left: 2, bottom: 5.0, top: 5.0),
                           entryTextStyle: charts.TextStyleSpec(
                             
                               color: charts.MaterialPalette.purple.shadeDefault,
@@ -51,17 +60,26 @@ class _pieChartState extends State<pieChart> {
                           
                         ],
                     defaultRenderer: new charts.ArcRendererConfig(
-                        arcWidth: 70,
+                        arcWidth: 100,
                         arcRendererDecorators: [
                           new charts.ArcLabelDecorator(
-                            labelPosition: charts.ArcLabelPosition.outside,
-                            showLeaderLines: true,
-                            labelPadding: 5,
-                          )
+                            labelPosition: charts.ArcLabelPosition.inside,
+                            insideLabelStyleSpec: charts.TextStyleSpec(fontSize: 7, color: 
+           charts.Color.fromHex(code: "#FFFFFF")
+           
+           )
+           ),
+                            //labelPadding: 5,
+                          
                         ]),
                   ),
-                )
+                  
+                ),
+                
+                
               ],
             )));
   }
+  Grafik graf = Grafik();
+  GrafikState grafs = GrafikState();
 }
