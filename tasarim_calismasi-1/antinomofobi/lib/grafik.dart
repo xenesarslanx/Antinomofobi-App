@@ -1,12 +1,15 @@
-import 'package:antinomofobi/pie_data.dart';
+/*import 'package:antinomofobi/grafikler/grafik_data.dart';
+
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:app_usage/app_usage.dart';
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
+import 'package:fl_chart/fl_chart.dart';
 //import 'package:syncfusion_flutter_charts/charts.dart';
 //import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 class Grafik extends StatefulWidget {
+  final List<AppUsageInfo> information;
+    Grafik({this.information});
   @override
   GrafikState createState() => GrafikState();
 }
@@ -95,7 +98,7 @@ print('son 24 saatte en çok vakit harcanan 2. uygulama:${max2[0]}');*/
 
           Expanded(
                       child:charts.BarChart(
-                      getSeriesData(), 
+                      getSeriesData(widget.information), 
                       animate: true,
                       domainAxis: charts.OrdinalAxisSpec(
                         renderSpec: charts.SmallTickRendererSpec(labelRotation: 60)
@@ -165,8 +168,10 @@ class Degerler {
 
 Degerler deger = Degerler();
 //
-List<PieChartSectionData> data = [
+/*List<PieChartSectionData> data = [
   PieChartSectionData(
       title: '${deger.app}', color: Colors.red, value: deger.sure),
   PieChartSectionData(title: 'b', color: Colors.green, value: 20.0),
 ];
+*/
+*/

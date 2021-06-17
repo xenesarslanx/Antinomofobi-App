@@ -1,7 +1,9 @@
+import 'package:antinomofobi/grafikler/grafik.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app_usage/app_usage.dart';
-import 'Sidebar_menu/navigation_drawer_widget.dart';
+
 import 'grafikler/grafik.dart';
 
 class ilkSayfa extends StatefulWidget {
@@ -10,13 +12,9 @@ class ilkSayfa extends StatefulWidget {
 }
 
 class ilkSayfaState extends State<ilkSayfa> {
- 
+  GrafikState gstate = GrafikState(); // diğer class obje
   List<AppUsageInfo> infos = [];
-  //List s = [];
-
-  //ilkSayfaState({this.infos});
-
- // var infoss = List.empty();
+ 
   @override
   void initState() {
 
@@ -24,17 +22,7 @@ class ilkSayfaState extends State<ilkSayfa> {
  
   }
 
-  //Future<List<AppUsage>>
-  /*Future<List<AppUsage>> dizi() async {
-    DateTime endDate = new DateTime.now();
-    DateTime startDate = endDate.subtract(Duration(days: 1));
-   
-   List infoList  =
-        await AppUsage.getAppUsage(startDate, endDate);
-    s[0] = infoList[0].usage.inMinutes.toInt();
-          
-    return s[0];
-  }*/
+  
   
    getUsageStats() async {
 
@@ -85,7 +73,9 @@ infos=infoList;
             onRefresh: refresh
 ,
             child: FutureBuilder(
-              future: getUsageStats(),
+              future:
+              //gstate.getUsageStats(),
+               getUsageStats(),
               builder: (BuildContext context,AsyncSnapshot snapshot){
 
                 if(snapshot.hasData){

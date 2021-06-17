@@ -4,7 +4,6 @@ import 'package:antinomofobi/onboard.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 
-//import 'package:introduction_screen/introduction_screen.dart';
 
 void main() {
   runApp(ilk()
@@ -65,14 +64,14 @@ class _MyAppState extends State<MyApp> {
           
           children: <Widget>[
             Column(
-             // mainAxisAlignment: MainAxisAlignment.end,
+             
               children: [
                 ElevatedButton(
                      child:Text('GEÇ', style: Theme.of(context).textTheme.headline5),
                   onPressed:() => Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) =>ilkSayfa(),
-                     //child:Text('GEÇ', style: Theme.of(context).textTheme.headline5),),
+                    
                     ),
                   ),
                 ),

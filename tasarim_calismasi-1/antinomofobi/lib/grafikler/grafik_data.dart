@@ -25,11 +25,7 @@ final List<PopulationData> data = [
  
 ];
 
-Map<String, int> dataMap = {
-    "Flutter": 5,
-    "React": 3,
-    
-  };
+
 
 getSeriesData(List<AppUsageInfo> information) {
 //sort((a,b)=>a.usage.inMinutes.compareTo(b.usage.inMinutes))
@@ -65,7 +61,7 @@ getSeriesData(List<AppUsageInfo> information) {
     
      }
      
-   };
+   }
 
 }
 

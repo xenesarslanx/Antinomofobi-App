@@ -6,26 +6,22 @@ import 'package:flutter/material.dart';
 
 class Grafik extends StatefulWidget {
   final List<AppUsageInfo> information;
-  final List<AppUsageInfo> information1;
+ 
 
-  Grafik({this.information, this.information1});
-  //Grafik graf = Grafik();
+  Grafik({this.information});
+ 
   @override
   GrafikState createState() => GrafikState();
 }
 
-class GrafikState extends State<Grafik> {
- 
+class GrafikState extends State<Grafik> { 
+
   List<AppUsageInfo> infos = [];
   List<AppUsageInfo> infoList;
-  //int touchedIndex;
-
+  
   var largest = [0];
   var largests = ['0'];
   var large = [];
-
-  var infoss = List.empty();
-  
 
   getUsageStats() async {
     try {
@@ -35,8 +31,8 @@ class GrafikState extends State<Grafik> {
 
       setState(() {
         infos = infoList;
-        infoss = infos; //infoss ben olusturdum
-      });
+             });
+
 //son 24 saatte 60 dakikadan fazla kullanılan app bulma
       int t;
       for (t = 0; t < infoList.length; t++) {
@@ -95,7 +91,7 @@ class GrafikState extends State<Grafik> {
                         }
                         );
                       }
-                      //getSeriesDataAyrinti(widget.information);}
+                    
                       ),
                   Container(
                     child: Text('${bildirim.enCok}'),
@@ -106,7 +102,7 @@ class GrafikState extends State<Grafik> {
               Expanded(
                 child: charts.BarChart(
                   getSeriesData(widget.information),
-                  //barGroupingType: charts.BarGroupingType.grouped,
+                 
 
                   animate: true,
                   vertical: false, //grafik dikey veya yatay
@@ -116,25 +112,13 @@ class GrafikState extends State<Grafik> {
                 ),
               ),
 
-              //     ayrintiGrafik(),
+              
             ]
             ),
             ),
             );
   }
 
-  Expanded ayrintiGrafik() {
-    return Expanded(
-      child: charts.BarChart(
-        getSeriesDataAyrinti(widget.information1),
-
-        animate: true,
-        vertical: false, //grafik dikey veya yatay
-        domainAxis: charts.OrdinalAxisSpec(
-            renderSpec: charts.SmallTickRendererSpec(labelRotation: 0)),
-      ),
-    );
-  }
 }
 
 class Bildirim {

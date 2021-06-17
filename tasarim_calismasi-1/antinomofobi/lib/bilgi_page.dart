@@ -7,8 +7,12 @@ class bilgi extends StatefulWidget {
 
 class bilgiState extends State<bilgi> {
     List<String> bilgiler = [
-    'YATAK ODANIZA SOKMAYIN \n Yetişkinlerin üçte biri telefonlarını uyandıktan sonra geçen ilk 5 dakika içinde kontrol ediyor, yarısından fazlası ise ilk 15 dakika içinde. Yüzde 38’i ise geceleri telefonlarıyla ilgileniyor. Eğer hayatınızı kontrol altına almak istiyorsanız yatak odanıza telefonunuzu sokmayın.',
-     'bilgi 2', 'bilgi 3',
+    'YATAK ODANIZA SOKMAYIN \n\n Yetişkinlerin üçte biri telefonlarını uyandıktan sonra geçen ilk 5 dakika içinde kontrol ediyor, yarısından fazlası ise ilk 15 dakika içinde. Yüzde 38’i ise geceleri telefonlarıyla ilgileniyor. Eğer hayatınızı kontrol altına almak istiyorsanız yatak odanıza telefonunuzu sokmayın.',
+     'EVİN İÇİNDE YASAK ALANLARI BELİRLEYİN \n\n Evin içinde telefon kullanımın yasak olduğu alanlar belirlemek bitmeyen bir çatışmaya olan ihtiyacı ortadan kaldırabilir. Telefonları yatak odalarında yasaklamak herkese daha iyi bir uyku sağlarken yemek masasında yasaklamak da aileyi tekrar bir araya getirebilir. Yapılan çalışmalarda akıllı telefonun sadece varlığının bile yemek masasındaki sohbetler üzerinde olumsuz etkileri olabileceği gözlendi. Telefonunuzu masanın üzerinde tutmayın ve bir görüşme yapmanız gerektiğinde de öncesinde masadakilerden izin isteyin. Bu davranış etrafınızdaki insanların da kendi telefonlarıyla uğraşmasını engelleyecektir.', 
+     'BİLDİRİMLERİ KAPATIN \n\n Telefonunuzun titreşip yanıp sönmesine karşı koymak zor, ayarlardan bildirimleri kapatarak kontrolü elinize alabilirsiniz. Telefonunuzun cazibesini kullanmadığınız gereksiz uygulamaları silerek daha da azaltabilirsiniz. Telefonunuzda sadece yaşam kalitenizi yükselten, önemli uygulamaları tutun (haritalar, galeri, müzik vb.).',
+    'SİNSİ UYGULAMALARI SİLİN \n\n Yaşam kalitenizi arttırmaktansa dikkatinizi dağıtan tüm uygulamaları silin. Eğer sizi mutsuz ediyorsa (mesela iş arkadaşınızın Facebook’taki tatil fotoğrafları) onu da silin. Sonuçta sosyal medyayı diz veya masaüstü bilgisayarınızdan da kontrol edebilirsiniz.',
+    'SİZİ CEZBEDENLERİ BUDAYIN \n\n Fazla kullanmadığınız uygulamaları ve e-postanızı telefonun ikinci sayfasına taşıyın, kullanmadığınız ama silinemeyen uygulamaları da üçüncü sayfaya. Sizi cezbeden uygulamaları da bir dosyada toplayarak daha az dikkat çekmelerini sağlayabilirsiniz.',
+    '"Telefonuma bakmayacağım" deyin \n\n Bakamam kelimesi, sanki dış güçler size yapmamanız gereken bir şey deklare etmiş de siz de mecburen ona uyuyormuşsunuz gibi hissettiriyor. Halbuki insan motivasyonu, dış güçlere bağlı çalışmaz. Hiçkimsenin bize bir şey yapıp yapmayacağımızı söylemesinden hoşlanmayız. Bu yüzden kendi kararınızı kendinizin verdiğini vurgulayın ve bakmamaya karar verdim deyin.\n\n fitness hedeflerine ulaşmaya çalışan kadınlarla ilgili bir çalışmadan bahsediliyor: Kendi kendilerine, "Fitness seansımı kaçıramam" diyenlerin sadece yüzde 10u fitness seansına gidiyor! Bunun yerine "Fitness seansımı kaçırmam" diyenlerin yüzde 80i hakikaten kaçırmıyor.',
   ];
   int index = 0;  
 
@@ -31,13 +35,7 @@ class bilgiState extends State<bilgi> {
                   child: Column(         
     children:<Widget> [
       SizedBox(height: 100),
-     /* ClipRRect(//containerı clipRRect yaptım
-       borderRadius: BorderRadius.only(
-    topRight:    Radius.circular(50.0),
-    topLeft:     Radius.circular(90.0),
-    bottomRight: Radius.circular(50.0),
-    bottomLeft:  Radius.circular(10.0)
-          ),*/
+    
                      Container(      
                  margin: EdgeInsets.only(left: 10, top:100, right:10, bottom:60),
                    alignment: Alignment.bottomCenter,
@@ -51,7 +49,7 @@ class bilgiState extends State<bilgi> {
                     ),
                   ),
                     ),
-  //    ),
+  
 SizedBox(height: 50,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -89,14 +87,7 @@ SizedBox(height: 50,),
           ),
         ),      
          
-       /* ElevatedButton(
-           child: Text('sonraki tavsiye'),
-           
-          onPressed:(){setState(() {
-            i++;
-           //  Text('${bilgiler[i]}');
-          });}
-           ),*/      
+         
         ),
       );
     

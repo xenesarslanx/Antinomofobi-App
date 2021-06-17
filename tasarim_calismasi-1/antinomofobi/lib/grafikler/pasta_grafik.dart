@@ -1,5 +1,5 @@
 import 'package:antinomofobi/bilgi_page.dart';
-import 'package:antinomofobi/grafikler/grafik.dart';
+
 import 'package:antinomofobi/grafikler/grafik_data.dart';
 import 'package:app_usage/app_usage.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
@@ -39,8 +39,7 @@ class pieChartState extends State<pieChart> {
                     getSeriesData(widget.information),
                     animate: false,
                     behaviors: [
-                      //     SlidingViewport(),
-                      //   charts.PanAndZoomBehavior(),
+                    
                      charts.DatumLegend(
 
                           showMeasures: true,
@@ -69,7 +68,7 @@ class pieChartState extends State<pieChart> {
            
            )
            ),
-                            //labelPadding: 5,
+                           
                           
                         ]),
                   ),
@@ -80,6 +79,5 @@ class pieChartState extends State<pieChart> {
               ],
             )));
   }
-  Grafik graf = Grafik();
-  GrafikState grafs = GrafikState();
+ 
 }

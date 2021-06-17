@@ -1,41 +1,25 @@
+/*import 'package:antinomofobi/grafikler/grafik.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app_usage/app_usage.dart';
-import 'grafik.dart';
 
 class ilkSayfa extends StatefulWidget {
   @override
   ilkSayfaState createState() => ilkSayfaState();
 }
 
-// double dk =infos[1].usage.inMinutes.toDouble();
+
 class ilkSayfaState extends State<ilkSayfa> {
  
   List<AppUsageInfo> infos = [];
-  List s = [];
+ 
 
-  //ilkSayfaState({this.infos});
-
-  var infoss = List.empty();
   @override
   void initState() {
     super.initState();
   }
 
-  //Future<List<AppUsage>>
-  Future<List<AppUsage>> dizi() async {
-    DateTime endDate = new DateTime.now();
-    DateTime startDate = endDate.subtract(Duration(days: 1));
-   // List<AppUsageInfo> infoList
-   List infoList  =
-        await AppUsage.getAppUsage(startDate, endDate);
-    
-    s[0] = infoList[0].usage.inMinutes.toInt();
-    
-   
-    //await prefs.setInt("Sayim", s);
-    return s[0];
-  }
+ 
   
    getUsageStats() async {
 
@@ -47,14 +31,14 @@ class ilkSayfaState extends State<ilkSayfa> {
 
       setState(() {
         infos = infoList;
-        infoss = infos;
+       
       });
 
       for (var info in infoList) {
         print(info.toString());
         getUsageStats().then((value) => print(infos[1].usage.inMinutes.toInt()));
         
-       //  print(a.dakka);
+     
        
       }
       
@@ -112,5 +96,5 @@ class ilkSayfaState extends State<ilkSayfa> {
     );
   }
 }
-
+*/
 
