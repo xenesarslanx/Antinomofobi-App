@@ -18,7 +18,7 @@ class PopulationData {
 
 final List<PopulationData> data = [
   //
-  // PopulationData(
+  // PopulationData(//
   //   appName: 'a',
   //   usageMinute: 200,
   // ),
