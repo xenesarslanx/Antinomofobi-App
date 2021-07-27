@@ -1,4 +1,5 @@
 import 'package:antinomofobi/app_s%C3%BCreleri.dart';
+import 'package:antinomofobi/bilgi_page.dart';
 import 'package:antinomofobi/grafikler/grafik_data.dart';
 import 'package:antinomofobi/grafikler/pasta_grafik.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
@@ -70,20 +71,20 @@ class GrafikState extends State<Grafik> {
             icon: Icon(Icons.arrow_back),
             onPressed: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ilkSayfa()),
+              MaterialPageRoute(
+                  builder: (context) => pieChart(
+                        information: infos,
+                      )),
             ),
           ),
-          title: Text('Grafik'),
+          title: Text('Satır Grafiği'),
           actions: [
             IconButton(
               onPressed: () => Navigator.push(
                 context,
-                MaterialPageRoute(
-                    builder: (context) => pieChart(
-                          information: infos,
-                        )),
+                MaterialPageRoute(builder: (context) => bilgi()),
               ),
-              icon: new Icon(Icons.graphic_eq_rounded),
+              icon: new Icon(Icons.arrow_forward),
             ),
           ],
         ),

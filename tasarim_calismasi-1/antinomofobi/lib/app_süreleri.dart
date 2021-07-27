@@ -1,4 +1,5 @@
 import 'package:antinomofobi/grafikler/grafik.dart';
+import 'package:antinomofobi/grafikler/pasta_grafik.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,27 +15,21 @@ class ilkSayfa extends StatefulWidget {
 class ilkSayfaState extends State<ilkSayfa> {
   GrafikState gstate = GrafikState(); // diğer class obje
   List<AppUsageInfo> infos = [];
- 
+
   @override
   void initState() {
-
     super.initState();
- 
   }
 
-  
-  
-   getUsageStats() async {
-
+  getUsageStats() async {
     try {
       DateTime endDate = new DateTime.now();
       DateTime startDate = endDate.subtract(Duration(days: 1));
       List<AppUsageInfo> infoList =
           await AppUsage.getAppUsage(startDate, endDate);
-infos=infoList;
-      
-      return infos;
+      infos = infoList;
 
+      return infos;
     } on AppUsageException catch (exception) {
       print(exception);
     }
@@ -42,13 +37,13 @@ infos=infoList;
 
   @override
   Widget build(BuildContext context) {
-   // print("merhaba"+infos.toString());
+    // print("merhaba"+infos.toString());
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 1,
         child: Scaffold(
-         // drawer:NavigationDrawerWidget(),
+          // drawer:NavigationDrawerWidget(),
           appBar: AppBar(
             bottom: TabBar(
               tabs: [
@@ -62,7 +57,10 @@ infos=infoList;
               IconButton(
                 onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Grafik(information: infos,)),
+                  MaterialPageRoute(
+                      builder: (context) => pieChart(
+                            information: infos,
+                          )),
                 ),
                 icon: new Icon(Icons.graphic_eq_rounded),
               ),
@@ -70,44 +68,40 @@ infos=infoList;
             backgroundColor: Colors.green,
           ),
           body: RefreshIndicator(
-            onRefresh: refresh
-,
+            onRefresh: refresh,
             child: FutureBuilder(
               future:
-              //gstate.getUsageStats(),
-               getUsageStats(),
-              builder: (BuildContext context,AsyncSnapshot snapshot){
-
-                if(snapshot.hasData){
-               return ListView.builder(
+                  //gstate.getUsageStats(),
+                  getUsageStats(),
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                if (snapshot.hasData) {
+                  return ListView.builder(
                       itemCount: snapshot.data.length,
                       itemBuilder: (context, index) {
                         print("deneme");
-                        print("information "+snapshot.data[index].appName);
+                        print("information " + snapshot.data[index].appName);
                         print(snapshot.data);
 
-                          return ListTile(
+                        return ListTile(
                             //  leading:  Text(infos[index].usage.inMinutes.toString()),
-                              title: Text('Uygulama Adı: ${snapshot.data[index].appName}'),
-                              //  subtitle: Text('Uygulama Adı: ${infos[index].appName}'),
-                              //subtitle: Text(infos[index].endDate.toString()),
-                          
-                              subtitle: Text(
-                                  'Dakika kullanımı:${snapshot.data[index].usage.inMinutes}'), // her uyg. ne kadar kullandığım dk cinsi
-                              // subtitle:Text(infos[index].startDate.toString()),
-                              
-                              trailing: Text(
-                                'Kullanım Süresi h/m/s: ${snapshot.data[index].usage.toString()}',
-                              )
-                              
-                              );
-                        }
+                            title: Text(
+                                'Uygulama Adı: ${snapshot.data[index].appName}'),
+                            //  subtitle: Text('Uygulama Adı: ${infos[index].appName}'),
+                            //subtitle: Text(infos[index].endDate.toString()),
 
-                      );
-                }else{
-                  return CircularProgressIndicator(color: Colors.red,);
+                            subtitle: Text(
+                                'Dakika kullanımı:${snapshot.data[index].usage.inMinutes}'), // her uyg. ne kadar kullandığım dk cinsi
+                            // subtitle:Text(infos[index].startDate.toString()),
+
+                            trailing: Text(
+                              'Kullanım Süresi h/m/s: ${snapshot.data[index].usage.toString()}',
+                            ));
+                      });
+                } else {
+                  return CircularProgressIndicator(
+                    color: Colors.red,
+                  );
                 }
-
               },
             ),
           ),
@@ -124,9 +118,6 @@ infos=infoList;
     List<AppUsageInfo> infoList =
         await AppUsage.getAppUsage(startDate, endDate);
     infos = infoList;
-    setState(() {
-
-    });
-
+    setState(() {});
   }
 }
