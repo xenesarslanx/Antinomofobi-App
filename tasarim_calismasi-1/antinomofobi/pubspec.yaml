@@ -29,6 +29,9 @@ dependencies:
   charts_flutter: ^0.10.0
    
   animated_splash_screen: 
+
+  firebase_admob: ^0.11.2
+
   
   
   # The following adds the Cupertino Icons font to your application.
