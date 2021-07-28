@@ -11,7 +11,7 @@ class AdvertService {
   }
   showBanner() {
     BannerAd banner = BannerAd(
-        adUnitId: BannerAd.testAdUnitId,
+        adUnitId: _banner,
         size: AdSize.smartBanner,
         targetingInfo: _targetingInfo);
 
