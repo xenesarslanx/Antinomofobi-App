@@ -1,5 +1,4 @@
 import 'package:antinomofobi/grafikler/grafik.dart';
-import 'package:antinomofobi/grafikler/pasta_grafik.dart';
 import 'package:app_usage/app_usage.dart';
 import 'package:flutter/material.dart';
 

@@ -28,7 +28,7 @@ class AdvertService {
 
     interstitialAd
       ..load()
-      ..show(anchorType: AnchorType.top, anchorOffset: 30);
+      ..show(anchorOffset: 30);
 
     interstitialAd.dispose();
   }

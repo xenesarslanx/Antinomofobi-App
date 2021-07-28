@@ -27,6 +27,7 @@ class ilkSayfaState extends State<ilkSayfa> {
       DateTime startDate = endDate.subtract(Duration(days: 1));
       List<AppUsageInfo> infoList =
           await AppUsage.getAppUsage(startDate, endDate);
+
       infos = infoList;
 
       return infos;
